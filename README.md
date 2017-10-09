@@ -3,18 +3,17 @@
 ## Table of Contents
 
 * [Instructions](#instructions)
-* [Contributing](#contributing)
 
 ## Instructions
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+ This code requires no specific external dependencies, other than remote library network access.
 
-To get started, open `js/app.js` and start building out the app's functionality
+ The aim of the game is to successfully match all random pairs on the field.
+ 1) click on a card, its contents will be displayed.
+ 2) click on a second card, its contents will be displayed.
+ 3) If the two cards match, thats a point.
+ 4) Once you earn 8 points, the game is over.
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+ You can restart at any time with the top right reload icon.
 
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+The page is hosted here: https://phoefgen.github.io/fend-project-memory-game/
