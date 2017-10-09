@@ -110,7 +110,6 @@ const Game = class {
   cardClicked(game, clickedCard){
     if (this.turnInProgress) {
       // Handle second turn of card.
-      console.log('Second turn: ' + game.gameDeck[clickedCard].cardType);
       this.secondTurn(game, clickedCard);
     } else {
       // Cleanup exposed cards and state from last turn
@@ -120,12 +119,10 @@ const Game = class {
       game.currentGuessB = 'None';
       // Handle first turn of card.
 
-      console.log('First Turn: ' + game.gameDeck[clickedCard].cardType);
       this.firstTurn(game, clickedCard);
     }
   }
   openCard(game, cardIndex){
-    console.log("index" + cardIndex);
     $('#card-field').children().eq(cardIndex).addClass("open show");
   }
   firstTurn(game, clickedCard){
@@ -165,18 +162,16 @@ const Game = class {
     game.adjustRating(game);
     $('.moves').text(game.gameTurns);
 
+    // Ignore bad guess, respond to correct guess.
     if (game.currentGuessA == game.currentGuessB) {
       // Disable mouse clicks for cards that have been correctly guessed
-    //  $('.' + game.currentGuessA ).parent().css("pointer-events", "none");
+      $('.' + game.currentGuessA ).parent().css("pointer-events", "none");
       $('.' + game.currentGuessA ).parent().css("opacity", "0.2");
       this.matches ++;
-      console.log(this.matches);
-      if (this.matches === 1) {
+      if (this.matches === 8) {
         game.finishTime = $.now();
         game.endGame(game);
       }
-    } else {
-      console.log("turn result " + game.currentGuessA);
     }
   }
   endGame(game){
@@ -202,7 +197,7 @@ const Game = class {
     var minutes = Math.floor(seconds / 60);
     var hours = Math.floor(minutes / 60);
     seconds = seconds - (minutes * 60);
-    return hours + 'h: ' + minutes + 'm:' + seconds + '  seconds';
+    return hours + 'h ' + minutes + 'm  ' + seconds + '  seconds';
   }
 };
 
