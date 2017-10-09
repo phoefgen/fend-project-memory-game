@@ -41,14 +41,24 @@ function setField(gameDeck) {
 }
 
 function listen(game) {
+  // Detect player choices (click cards)
   $('.card').on("click", function() {
     game.cardClicked(game, $(this).index());
-});
+  });
+
+  // Restart game
+  $('.restart').on("click", function() {
+    location.reload();
+  });
+  $('.restart .gameOver').on("click", function() {
+    location.reload();
+  });
 }
 
 function gameLoop() {
   game = createGame();
   setField(game.gameDeck);
+  startCount();
   listen(game);
 }
 
@@ -62,8 +72,6 @@ gameLoop();
  *   - loop through each card and create its HTML
  *   - add each card's HTML to the page
  */
-
-// Shuffle function from http://stackoverflow.com/a/2450976
 
 
 /*
