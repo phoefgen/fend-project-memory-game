@@ -1,6 +1,55 @@
+/**
+Author: Paul Hoefgen
+A guessing game.
+**/
+
+
+
 /*
  * Create a list that holds all of your cards
  */
+
+
+function buildDeck() {
+  deck = cardTypes;
+  // Double the deck
+  var gameDeck = deck.concat(deck);
+  return gameDeck;
+}
+
+function createGame() {
+
+  game = new Game();
+
+  // Take the static list of card types, build a deck of 16 cards with two of each card type. Store the
+  // list of cardtypes as an array.
+  randomDeck = shuffleDeck(buildDeck());
+
+  // Build an array of card objects from the randomized card types.
+  randomDeck.forEach(function(cardType){
+    game.gameDeck.push(new Card(cardType));
+  });
+  return game;
+}
+
+function setField(gameDeck) {
+  // Takes a shuffled, random deck and displays it.
+  gameDeck.forEach(function(card) {
+    newCard = cardHTML.replace("%cardType%", card.cardType);
+    $('#card-field').append(newCard);
+
+  })
+
+  gameDeck
+}
+function gameLoop() {
+  game = createGame();
+  setField(game.gameDeck);
+
+}
+
+gameLoop();
+
 
 
 /*
@@ -11,19 +60,6 @@
  */
 
 // Shuffle function from http://stackoverflow.com/a/2450976
-function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
-
-    while (currentIndex !== 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-    }
-
-    return array;
-}
 
 
 /*
