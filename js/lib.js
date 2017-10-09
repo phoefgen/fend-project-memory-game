@@ -89,6 +89,28 @@ const Game = class {
     this.gameDeck = [];
     this.gameTurns = 0;
     this.gameRating = 3;
-  };
+    this.turnInProgress = false;
+    this.gameOver = false;
+  }
+
+  cardClicked(game, clickedCard){
+    if (this.turnInProgress) {
+      // Handle second turn of card.
+      console.log('Second turn: ' + game.gameDeck[clickedCard].cardType);
+      this.flipCard(game, clickedCard);
+
+      this.turnInProgress = false;
+    } else {
+      // Handle first turn of card.
+      console.log('First Turn: ' + game.gameDeck[clickedCard].cardType);
+      this.turnInProgress = true;
+      this.flipCard(game, clickedCard);
+
+    }
+  }
+  flipCard(game, cardIndex){
+    console.log("index" + cardIndex);
+    $('#card-field').children().eq(cardIndex).addClass("open show");
+}
 };
 

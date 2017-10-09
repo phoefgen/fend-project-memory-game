@@ -37,15 +37,19 @@ function setField(gameDeck) {
   gameDeck.forEach(function(card) {
     newCard = cardHTML.replace("%cardType%", card.cardType);
     $('#card-field').append(newCard);
-
-  })
-
-  gameDeck
+  });
 }
+
+function listen(game) {
+  $('.card').on("click", function() {
+    game.cardClicked(game, $(this).index());
+});
+}
+
 function gameLoop() {
   game = createGame();
   setField(game.gameDeck);
-
+  listen(game);
 }
 
 gameLoop();
