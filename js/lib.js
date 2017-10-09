@@ -1,7 +1,12 @@
 /**
 Sets up the various objects for use in the game loop.
+Author: Paul Hoefgen
 **/
 
+
+
+
+/***********************************************************************************************************************/
 // Helper utils:
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffleDeck(deck) {
@@ -20,7 +25,7 @@ function shuffleDeck(deck) {
   return deck;
 }
 
-// http://joe-riggs.com/blog/2012/05/javascript-count-up-timer-with-hours-minutes-second-hours-minutes/
+// Sauce: http://joe-riggs.com/blog/2012/05/javascript-count-up-timer-with-hours-minutes-second-hours-minutes/
 const startCount = function()
 {
 	timer = setInterval(count,1000);
@@ -60,14 +65,8 @@ function plz(digit){
     return zpad;
 }
 
-const cardHTML =  '<li class="card">' +
-                  '  <i class="fa %cardType%"></i>' +
-                  '</li>';
 
-
-
-
-
+/***********************************************************************************************************************/
 // Returns A static list of card types.
 const cardTypes = [
     "fa-diamond",
@@ -86,6 +85,8 @@ const Card = class  {
 }
 };
 
+/***********************************************************************************************************************/
+
 const Game = class {
   constructor() {
     //Sets up a new game object
@@ -100,7 +101,6 @@ const Game = class {
     this.startTime = $.now();
     this.finishTime = 0;
   }
-
   cardClicked(game, clickedCard){
     if (this.turnInProgress) {
       // Handle second turn of card.
@@ -195,3 +195,4 @@ const Game = class {
   }
 };
 
+/***********************************************************************************************************************/
