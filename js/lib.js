@@ -162,7 +162,7 @@ const Game = class {
       $('.' + game.currentGuessA ).parent().css("pointer-events", "none");
       $('.' + game.currentGuessA ).parent().css("opacity", "0.2");
       this.matches ++;
-      if (this.matches === 1) {
+      if (this.matches === 8) {
         game.finishTime = $.now();
         game.endGame(game);
       }
