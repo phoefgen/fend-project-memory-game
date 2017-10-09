@@ -17,8 +17,8 @@ body {
 }
 
 body {
-    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
-    font-family: 'Coda', cursive;
+    font-family: 'Permanent Marker', regular;
+    background: linear-gradient(blue,green);
 }
 
 .container {
@@ -29,8 +29,9 @@ body {
 }
 
 h1 {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
+    font-family:'Permanent Marker' , sans-serif;
+    font-weight: 100;
+    color: orangered;
 }
 
 /*
@@ -77,13 +78,25 @@ h1 {
 
 .deck .card.show {
     font-size: 33px;
-    transform: rotate7(80);
+    transform: rotateY(80);
 }
 
 .deck .card.match {
     cursor: default;
     background: #02ccba;
     font-size: 33px;
+}
+
+
+.gameOver {
+    transition: all 0.5s ease;
+    transform: rotateX(90);
+    background-color: yellowgreen;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-color: black;
+    border-width: 5px;
 }
 
 /*
@@ -94,6 +107,9 @@ h1 {
     text-align: left;
     width: 345px;
     margin-bottom: 10px;
+    font-size: 30px;
+    color: white;
+
 }
 
 .score-panel .stars {
@@ -101,6 +117,7 @@ h1 {
     padding: 0;
     display: inline-block;
     margin: 0 5px 0 0;
+    color: gold;
 }
 
 .score-panel .stars li {
@@ -120,3 +137,12 @@ h1 {
 .timer {
     text-align: center;
 }
+
+.timer-area {
+    background-color: greenyellow;
+    border-radius: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+

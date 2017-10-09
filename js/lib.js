@@ -83,14 +83,8 @@ const cardTypes = [
 const Card = class  {
   constructor(cardType){
     this.cardType = cardType;
-    this.discovered = false;
-    this.activeGuess = false;
-  }
-  setActiveState(activeState) {
-    this.activeGuess = activeState;
-  }
-
 }
+};
 
 const Game = class {
   constructor() {
@@ -168,7 +162,7 @@ const Game = class {
       $('.' + game.currentGuessA ).parent().css("pointer-events", "none");
       $('.' + game.currentGuessA ).parent().css("opacity", "0.2");
       this.matches ++;
-      if (this.matches === 8) {
+      if (this.matches === 1) {
         game.finishTime = $.now();
         game.endGame(game);
       }
@@ -178,7 +172,7 @@ const Game = class {
     // Remove Play field
     $('#card-field').children().remove();
     $('#card-field').removeClass("deck");
-    $('.timer').remove();
+    $('.timer-area').remove();
 
     // Determine game time
     var playtime = game.finishTime - game.startTime;
