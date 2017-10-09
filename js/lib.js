@@ -47,7 +47,7 @@ const  count = function()
                 hour=1;
               }
 
-        $(".timer").text(hour +":" + plz(mins) + ":" + plz(secs));
+        $(".timer").text( hour +":" + plz(mins) + ":" + plz(secs));
 
 }
 

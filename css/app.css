@@ -52,6 +52,8 @@ h1 {
 }
 
 .deck .card {
+    transform: rotateY(45);
+    transition: all 0.5s ease;
     height: 125px;
     width: 125px;
     background: #2e3d49;
@@ -66,8 +68,8 @@ h1 {
 }
 
 .deck .card.open {
-    transform: rotateY(180);
-    animation-duration: 2s;
+    transform: rotateY(90);
+    transition: all 0.5s ease;
     background: #02b3e4;
     cursor: default;
     font-size: 50px;
@@ -75,6 +77,7 @@ h1 {
 
 .deck .card.show {
     font-size: 33px;
+    transform: rotate7(80);
 }
 
 .deck .card.match {
@@ -108,4 +111,12 @@ h1 {
 .score-panel .restart {
     float: right;
     cursor: pointer;
+}
+
+/*
+* Timer Styling
+*/
+
+.timer {
+    text-align: center;
 }
