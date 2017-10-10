@@ -100,9 +100,10 @@ const Game = class {
     this.matches = 0;
     this.startTime = $.now();
     this.finishTime = 0;
+    this.anticheat = 'None';
   }
   cardClicked(game, clickedCard){
-    if (this.turnInProgress) {
+    if (this.turnInProgress && clickedCard !== this.anticheat) {
       // Handle second turn of card.
       this.secondTurn(game, clickedCard);
     } else {
@@ -122,6 +123,7 @@ const Game = class {
   firstTurn(game, clickedCard){
     // Modify the Game object with the event results
     this.currentGuessA = game.gameDeck[clickedCard].cardType;
+    this.anticheat = clickedCard;
     this.turnInProgress = true;
     this.openCard(game, clickedCard);
   }
