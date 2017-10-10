@@ -47,7 +47,7 @@ function listen(game) {
   $('.restart').on("click", function() {
     location.reload();
   });
-  $('.restart .gameOver').on("click", function() {
+  $('#game_reset').on("click", function() {
     location.reload();
   });
 }

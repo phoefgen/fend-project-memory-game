@@ -183,7 +183,11 @@ const Game = class {
     let gameOver = '<div class="gameOver"><h1> Game Over! </h1>' +
                      '<h2> Your Rating:  %rating% Stars!</h2>' +
                      '<h2> Completion Time: %time%' +
-                     '<h2> Moves:  %moves%</h2></div>';
+                     '<h2> Moves:  %moves%</h2></div>' +
+                     '<div class="endgame_restart">' +
+                     '<a href="index.html">Restart!</a>' +
+                     '<div>';
+
     gameOver = gameOver.replace('%rating%', game.gameRating).replace('%moves%',
                               game.gameTurns).replace('%time%', playtime);
     $('#card-field').append(gameOver);
